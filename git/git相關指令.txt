@@ -1,0 +1,32 @@
+Git相關指令
+
+git init：新建git資料夾（為初始化的狀態，屬性為隱藏）。
+git status：查看git狀態，untracked區塊為未加入版本控制，staged區塊為已加入版本控制，但未正式建立新版本。
+git add 檔名：選擇檔案加入版本控制，git add . 可以一次加入全部檔案。
+git rm --cached 檔名：將檔案移出版本控制。
+git commit：進入vim編輯器來新增版本資訊，並將檔案正式加入版本控制，輸入git commit -m "版本訊息"，可直接commit，未輸入版本訊息則無法commit。
+git commit -am"版本訊息"：可一次將所有檔案add+checkout（新建的檔案例外）。
+git log：查看歷史訊息，git --online可顯示簡短訊息。
+git checkout：輸入版本號可以回到該版本狀態，再輸入git checkout master就會回到最新版本。
+git diff：可以顯示commit前更動的內容。
+git commit --amend：可修改commit。
+git rest HEAD^ --hard：將最新的commit消除。
+			   --soft：回到commit前的狀態，但新的修改仍然保留著（此為預設）。
+git checkout --檔名：將已更新commit的檔案回覆到修改前的狀態。
+git checkout --.：將所有已更新commit的檔案回覆到修改前的狀態。
+
+
+建立gitignore的步驟：
+	1.新建.gitignore檔案（touch .gitignore)。
+	2.開啟.gitignore檔案，輸入不需要版本控制的檔案名稱後儲存再commit即可。
+
+	
+Git branch相關指令
+
+git branch 檔名：新增branch。
+git branch -v：可以看branch清單，master為主要的branch。
+git branch -d：刪除branch。
+git checkout branch檔名：切換至該branch。
+git merge branch檔名：把其他branch合併進來。
+git branch -m "名稱"：可修改branch名稱（必須切換至該branch）。
+git branch (遠端)branch檔名；可將遠端branch下載下來。
