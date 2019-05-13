@@ -1,0 +1,116 @@
+ES6(ECMAScript6 = ES2015)語法
+
+
+const常數宣告：宣告一個不可變的數。
+let變數宣告：宣告一個變數，此變數影響範圍在block{}內（建議用let取代var)。
+
+
+Template literals
+	1.多行字串可使用``符號。
+	2.使用`__${字串/數字/function}__`可自動將字串相加。
+		EX. console.log(`Now is ${new Date()} and good morning.`)
+
+
+Destructuring(解構)
+	EX. 1. var a = [1, 2, 3]
+		   var [A, B, C] = a
+		   console.log(a[A]) = 1
+		
+		2. var obj = {
+			 name:Orz
+			 address: Taiwan
+		   }
+		   var {name, address} = obj
+		   console.log(obj.name) = Orz
+		  
+		3. function test({a, b}){
+			  console.log(a)
+		   }
+		   test({
+			  a:1 ,
+			  b:2
+			})
+
+
+Spread Operator(展開)
+	EX. var arr = [1, 2, 3]
+		var arr2 = [4, 5, 6, ...arr]
+		console.log(arr2) = [4, 5, 6, 1, 2, 3]
+	
+	*運用...arr/obj 可將[]或{}去掉一層，另外使用展開會指向不同記憶體。
+
+	
+Rest Parameters(反向展開)
+	EX. var arr = [1, 2, 3, 4]
+		var [first, ...rest] = arr
+		console.log(first, rest) = 1, [2, 3, 4]
+		
+	*反向展開會和解構一起使用，且...rest必須為最後一項。
+
+	
+default Parameters(預設值)：幫函式設預設值，EX. function repeat(str = `abc`){}，可配合解構一起使用，EX. const{a = 5 ,b} = obj。
+
+
+Arrow Function(箭頭函式)：匿名函式中可將function去除並在參數後方加上箭頭。
+	EX. 1. function(n){} 改成 (n) =>{}
+		2. console.log(										console.log(
+				arr												arr
+					.filter(function(value){						.filter(value => value > 1)
+						return value > 1							.map(value => value * 2)
+					})							可改成→		)
+					.map(function(value){
+						return value * 2
+					})
+			)
+			
+
+Import和Export：
+	1. export function add(a, b){
+			return a + b
+		}
+		*export可用{}將所有要輸出的單元一併輸出，但{}非物件，故需用as做連結設定別名，EX. export {
+																					add as addFunction,
+																				}
+	2. import {add} from './路徑' 或使用 import * as 名稱 from '路徑' ，後者可一次匯入檔案內的多個funtion。
+		*npm尚未支援import，故需用npx babel-node 檔名 來使用檔案。
+		
+
+Babel：支援舊版本的編輯器，可將新語法轉換為舊語法。
+	1.先在cmder輸入npm install --save -dev @babel/core @babel/node
+	2.安裝完再輸入npm install --save @babel/preset -env
+	3.開新檔案，檔名為.babelrc，並在裡面輸入
+		{
+		"presets" : [@babel/preset-env"]
+		}
+	4.在node前面加上babel即可使用。
+	*babel會降低效能，故不適合用在專案上面，一般會用babel將專案編譯好後再釋出專案。
+
+
+Map：是一组键值對的結構，具有極快的查找速度。
+	EX. 1. var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+		   m.get('Michael') = 95
+		
+		2. var m = new Map(); // 空Map
+		   m.set('Adam', 67); // 添加新的key-value
+		   m.set('Bob', 59);
+		   m.has('Adam'); // 是否存在key 'Adam': true
+		   m.get('Adam'); // 67
+		   m.delete('Adam'); // 删除key 'Adam'
+		   m.get('Adam'); // undefined
+		   
+		   
+Set：為一组鍵的集合，但不儲存值，由於鍵不能重复，所以，在Set中，没有重複的鍵，要創建一个Set，需要提供一個Array作為輸入，或者直接創建一個空Set。
+	var s1 = new Set(); // 空Set
+	var s2 = new Set([1, 2, 3]); 
+	var s3 = new Set([1, 2, 3, 3, '3']); //含1, 2, 3重複元素在Set中自動被過濾
+	s; // Set {1, 2, 3, "3"} //注意數字3和字符串'3'是不同的元素。
+
+	s.add(4); //通過add(key)方法可以添加元素到Set中，可以重複添加，但不會有效果
+	s; // Set {1, 2, 3, 4}
+	s.add(4);
+	s; // 仍然是 Set {1, 2, 3, 4}
+	
+	var s = new Set([1, 2, 3]);
+	s; // Set {1, 2, 3}
+	s.delete(3); //通過delete(key)方法可以删除元素
+	s; // Set {1, 2}

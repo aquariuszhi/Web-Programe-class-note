@@ -1,0 +1,15 @@
+程式測試
+
+用現成框架Jest去做單元測試
+	1.先安裝Jest：在cmder輸入npm install --save -dev jest/yarn install --dev jest/yarn
+	2.將檔案輸出後。
+	3.新增index.test.js，並引入輸出的檔案。
+	4.寫入測試程式
+		test('描述',function(){
+			expert(functionA(x, y)).toBe/toEqual(結果);
+		}
+	5.在cmder輸入npx jest index.test.js或在json檔的script欄位中更改"test"欄為"jest"後輸入npm run test即可測試。
+	
+若有多種測試，可用describe('描述',function(){})將所有項目包起來較有結構性。
+
+TDD(Test-Driven Development)測試驅動開發：先將測試寫好再寫程式。

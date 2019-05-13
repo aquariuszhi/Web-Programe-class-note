@@ -1,0 +1,7 @@
+Module模組
+
+引入模組：
+var a = require('./路徑)或 var a = require('os')
+
+匯出模組：
+module.exports = b（b為模組名稱） 或 export.b = b() ，後面的寫法會將module變物件。

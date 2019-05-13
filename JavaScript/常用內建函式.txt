@@ -1,0 +1,53 @@
+常用內建函式
+
+數字相關
+
+Number(a)：將字串轉數字。
+parseInt(a, b)：將字串轉成b進位的數字。
+parseFloat(a)：將字串轉數字(浮點數)。
+parseFloat(a).toFixed(b)：將小數取到2位（屬性變字串）。
+Math.PI：叫出π。
+Math.ceil()：無條件進位。
+Math.floor()：無條件捨去。
+Math.round()：四捨五入。
+Math.sqrt()：開根號。
+Math.pow(a, b)：a的b次方。
+Math.random()：隨機取得 0<= x <= 1 的數。
+
+
+字串相關
+
+a.length：查詢a字串長度。
+a.toString()：將數字變字串，可用(a + '')代替。
+a.toLowerCase()：將a字串全部變小寫。
+a.toUpperCase()：將a字串全部變大寫。
+String.fromCharCode()：將數字轉成代表的字。
+a.charCodeAt(0)：字串中第零個字代表的數字(ps.字串也可以比大小)。
+a.indexOf(b)：在a變數中確認有無b字串。
+	有 → 回傳b字串的第一個字在a中的位置。
+	無 → 回傳負數。
+a.replace('b', 'c')：將變數a中的b字串第一個字改成c（可用(/b/g, 'c')換掉全部的b），
+a.split('b')：將b字串當斷點切割變數a（回傳為陣列）。
+a.trim()：將空隔去掉。
+a.slice(b, c)：提取字串中第b個～第c-1個。
+
+
+陣列相關
+
+a.length：查詢a陣列長度。
+a.indexOf(b)：在a陣列中確認有無b字串。
+	有 → 回傳b字串的第一個字在a中的位置。
+	無 → 回傳負數。
+a.join('b')：在陣列a的每一個元素接上b字串(頭尾除外)，並轉成字串。
+a.map(b())：對陣列a安插函式，並對每個元素做計算後回傳陣列a。
+a.filter(b())：將陣列a中的true回傳，false過濾掉。
+a.slice(b, c)：提取陣列中第b個～第c-1個。
+a.splice(b, c, d)；在a陣列中的第b個位置開始，往後刪除c個元素（並包含b），再插入d並回傳。
+a.sort()：將陣列a內元素的第一個字（或數）做排序。
+a.reverse()：將陣列a內的元素位置反轉。
+a.push(b)：將b插入a陣列最後一項，並回傳陣列長度，因此a.push(b) = push後的a.length
+a.reduce(b(c, d), e)：將陣列中所有的值做相加（此指令會一直執行c += d ，故須輸入return c+d才會是陣列總和)，b為function名稱/c為accumulator/d為currentValue/e為初始值。
+a.forEach(b())：對陣列a每一個函式做計算後不回傳陣列a。
+a.fill()：將陣列所有元素填滿。
+
+*函式內return 負數表示程式不正常中止，return 0 表示程序正常中止，return 1 表示程式正常運作。

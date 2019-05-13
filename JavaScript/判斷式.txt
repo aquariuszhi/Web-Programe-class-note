@@ -1,0 +1,31 @@
+判斷式相關
+
+1. if (){} ：當()內的條件為true時，執行{}內的內容，若()內的條件為false時，忽略此程式碼。
+2. if (){A}else{B}；當()內的條件為true時，執行{A}內的內容，若()內的條件為false時，執行{B}內的內容。
+3. if (){A}else if{B} else{}：用於多條件的情況。
+4. switch (變數){case 變數:____ break}：用於很多條件的情況。
+EX.
+var month = 6
+switch(month){
+	case 1 : 
+		console.log('一月')
+		break
+	case 2 : 
+		console.log('二月')
+		break
+		  .
+		  .
+		  .
+	case 11 :
+	case 12 :
+		console.log('接近年底')
+		break
+	default :
+		console.log('Error')
+		break
+}
+
+5.三次元運算子(condition ? A : B) ：達成條件執行A，未達成條件執行B。
+EX.
+var score = 74
+score >= 60 ? console.log('pass') : console.log('false')

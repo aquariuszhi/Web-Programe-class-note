@@ -1,0 +1,10 @@
+NPM(Node Package Manage)套件管理
+
+1. 在cmder輸入npm -v 可查詢npm版本。
+2. 在cmder輸入npm install b(b為套件名稱)可安裝套件。
+3. 在cmder輸入npm init 後產出json檔，再輸入install b --save可更新json檔（b為套件名稱），將專案給其他人後，其他人可以輸入npm install來根據json檔下載套件。
+	 *json檔會紀錄專案的各種內容和用到的套件，用--save可更新json檔。
+4. npm script：在json檔的script欄位內，放入名為"start"的專案入口檔案，使得在cmder輸入npm run start即可開啟檔案。
+
+
+Yarn ：由FB所開發的npm程式，安裝完成後可用yarn -v查看版本，操作方法和npm同，輸入時只要將npm一詞換成yarn即可。
