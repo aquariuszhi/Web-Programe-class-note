@@ -1,0 +1,90 @@
+HTML標籤
+
+<html>文件的開始
+
+<head>標示文件資訊，文件資訊放在此處
+
+<title>網頁的標題，放置於<head>
+
+<body>網頁的內容
+	<body bgcolor="背景顏色" text="文字顏色" link="超連結顏色" vlink="已點過超連結顏色" alink="作用中超連結顏色" background="背景圖片位址" bgproperties="fixed"（固定背景圖片）>
+
+<br />換行
+
+<p align = "對齊方式">文字</p>分段
+
+<hr size="5" width="100" color："顏色" />分隔線  <hr width="100" align="center" noshade />分隔線2
+
+<h* align="對齊方式">文字</h*>文字大小，*範圍1～6
+
+<b>文字</b>粗體字
+
+<i>文字</i>斜體字
+
+<u>文字</u>底線
+
+<sup>文字</sup>上標字
+
+<sub>文字</sub>下標字
+
+<font size="1～7" face="細明體, Arial"（1個字型以上要逗點跟空格） color="#CCCCCC">文字</font>
+
+
+<ul type="disc小圓點/circle空心小圓點/square實心正方形"> 符號式（可和<br />併用變成簡易清單型式）
+<li>文字</li>
+<li>文字</li>
+</ul>
+
+
+<ol type="A/a/I/i"（數字型式） start="1"（起始值）>數字式
+<li>文字</li>
+<li>文字</li>
+</ol>
+
+
+<a href="網址"  target="_blank（開新的不同視窗）/_new(新開視窗，新開的都會在同一個)/_parent（開啟前一個視窗網頁）/_self（在本頁切換）">文字</a>
+<a href="http://thu.edu.tw" title="***"（滑鼠提示文字） style="text-decoration:none"（消除連結底線）>
+<a name="name"（文件內的目標名稱）>文字</a>文字
+
+<img src="img/qoo.gif" width="20" height="30"  align="bottom/middle/top/left/right" alt="圖片註解" title="圖片標題(滑鼠提示文字)" border="2"（外框線粗）/>
+
+
+<table cellpadding="10"（內距） cellspacing="5"（儲存隔間的間距）>#表格的開始
+<caption>表格外標題文字</caption>
+　<tr align="left/center/right"（水平對齊方式） valign="baseline/bottom/middle/top"（垂直對齊方式） >列的開始
+　　<th>文字1-1</th>列裡面的標題
+　　<td colspan="2"（儲存格橫跨N個欄）>文字1-2</td>儲存格的開始與結束
+　</tr>列的結束
+　<tr>
+　　<td rowspan="2"（儲存格下跨N個列）>文字2-1</td>
+　　<td>文字2-2</td>
+　</tr>
+</table>#表格的結束
+
+
+<bgsound src="img/music.mp3" loop="5" />音樂
+
+<embed src="img/music.mp3" align="botton" autostart="fasle"(預設為true) hidden="true" loop="true" ShowPositionControls="fasle"（顯示快傳與倒帶）></embed>音樂2
+<embed src="***" ShowTracker："fasle"（顯示播放進度） ShowAudioControls："fasle"(顯示音量控制器) ShowStatusBar："fasle"（顯示資訊狀態列）ShowDisplay："fasle"（顯示資訊狀態）></embed>
+
+
+<form action="xx.html" method="get/post" name="form1" target："目標視窗" enctype="application/x-www-form-urlencoded"(編碼類型)>
+
+
+<input type="text" name="test" placeholder="在此輸入提示文字" disabled（沒有作用） readonly（不能操作）></input>
+<input type="password"（密碼）maxlength="3"（字數限制）></input>
+<input type="button（按鈕）/submit（送出表單）/reset（重設表單）></input>
+<input name="col" type="checkbox" value="50" />文字  核取方塊
+<input name="row" type="radio" value="50" checked（是否選取）/>文字  選項按鈕
+<input name="music" type="file" size="50"/>檔案欄位
+<input name="userid" type="hidden"（隱藏欄位） value="100" />
+
+
+<textarea name="text" wrap="off/virtual（自動換行，但sever收到的內容除了手動換行以外，沒有換行）/physical（自動換行，sever收到的內容亦有換行）"></textarea>文字區域
+
+<select name="data" size="2" multiple（允許多重選取）>選單、清單
+
+<option value="1">文字1</option> 清單值（包含在select裡）
+<option value="2">文字2</option>
+<option value="3">文字3</option>
+</select>

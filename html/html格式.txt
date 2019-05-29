@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "UTF-8"/>
+		<meta name = 'viewport' content = 'width = device-width, initial-scale = 1'>
+		<meta name = 'og:title' content = 'title'>
+		<meta name = 'og:discription' content = 'discription'>
+		<meta name = 'og:type' content = 'website'>
+		<meta name = 'og:image' content = '圖片網址'>
+		<title> </title>
+		<style>
+		</style>
+		<script type = 'text/javascript'>
+			document.addEventListener('DOMContentLoaded',function(){
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<span>
+			<span>
+		</div>
+	</body>
+</html>

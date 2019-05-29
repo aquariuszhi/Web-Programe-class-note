@@ -1,0 +1,5 @@
+&amp	&	 
+&quot	"	 
+&lt	<	 
+&gt	>	 
+&absp;	空白
