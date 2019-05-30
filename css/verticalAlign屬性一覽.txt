@@ -1,0 +1,8 @@
+vertical-align 屬性一覽
+
+vertical-align: top; /*垂直向上對齊*/ 
+vertical-align: bottom; /*垂直向下對齊*/ 
+vertical-align: middle; /*垂直置中對齊*/ 
+
+vertical-align: text-top; /*文字垂直向上對齊*/ 
+vertical-align: text-bottom; /*文字垂直向下對齊*/

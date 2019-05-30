@@ -1,0 +1,103 @@
+各種CSS選擇器的效率由高至低排序如下：
+
+1. ID (#id)
+2. Class (.class)
+3. Type (即HTML標籤,如div)
+4. 鄰接選擇器 (如: h2+p，僅作用於鄰接h2的p元素)
+5. Child (如: li>ul)
+6. Descendant (如:ul a)
+7. Universal (*)
+8. 屬性 (如: [type=”text”])
+9. 摸擬類別/元素 (如: a:hover)
+※瀏覽器用「由右至左」的方式來理解選擇器規則，故右邊元素範圍太大會拖慢效能。
+
+
+* {
+ margin: 0;
+ padding: 0;
+}
+星號標誌會指向頁面上所有的元素（對瀏覽器負荷較重，不建議使用）。
+
+
+a { 
+color: red; 
+}
+選擇當前頁面所有的相同type（種類）的元素
+
+
+#container {
+   margin: auto;
+}
+指向id
+
+
+.error {
+  color: red;
+}
+class選擇器
+
+
+X Y {
+  text-decoration: none;
+}
+descendant selector（子對象選擇器）
+
+
+div#container > ul {
+  border: 1px solid black;
+}
+指定只有下一層的標籤做改變（但更下層會繼承上一層的屬性）
+
+
+ul + p {
+   color: red;
+}
+相鄰兄弟選擇器（僅ul後面的第一個p被選到）
+
+
+ul ~ p {
+   color: red;
+}
+兄弟選擇器（ul後面的所有p被選到）
+
+
+a[href$=".jpg"] {
+   color: red;
+}
+選擇尾部包含""的字符串
+
+
+Pseudo Class偽類
+
+◎連結偽類
+a:link { color: red; }		未訪問過的連結
+a:visted { color: purple; }	已訪問過的連結
+
+◎使用者操作偽類
+:hover{ color: purple; } 	滑鼠游標懸停至元素上
+:focus{ color: purple; }	獲得焦點的元素
+:active{ color: purple; }	點擊元素時
+:checked {border: 1px;}		指向一個用戶端被選中的元素 - 像是單選框或者多選框。
+
+
+◎目標偽類
+:target{ color: purple; }	指定連結(herf)的元素
+
+◎結構性偽類
+E:nth-child(n) 			找到 E 的所有兄弟元素，然後依先後順序從 1 開始排序 (排序計算類型包含所有元素)，選取第 n 個元素
+E:nth-last-child(n)		找到 E 的所有兄弟元素，然後從最後的開始依先後順序從 1 排序 (排序計算類型包含所有元素)，選取第 n 個元素
+E:nth-of-type(n)		找到 E 的所有兄弟元素，然後依先後順序從 1 開始排序 (排序計算類型僅包含 E 元素)，選取第 n 個元素
+E:nth-last-of-type(n)	找到 E 的所有兄弟元素，然後從最後的開始依先後順序從 1 排序 (排序計算類型僅包含 E 元素)，選取第 n 個元素
+E:first-child			找到 E 的所有兄弟元素，然後選取第一個長子元素 (計算類型包含所有元素)
+E:last-child			找到 E 的所有兄弟元素，然後選取最後一個元素 (計算類型包含所有元素)
+E:first-of-type			找到 E 的所有兄弟元素，然後選取第一個長子元素 (計算類型僅包含 E 元素)
+E:last-of-type			找到 E 的所有兄弟元素，然後選取最後一個元素 (計算類型僅包含 E 元素)
+
+
+
+Pseudo Element偽元素
+::first-line：選取第一行
+::first-letter：選取第一個字
+::before：從選取元素內的前面插入東西
+::after：從選取元素內的後面插入東西（這兩句怎麼好像有點怪怪 der）
+::selection：選取文字反白後

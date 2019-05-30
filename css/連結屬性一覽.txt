@@ -1,0 +1,24 @@
+連結屬性一覽
+
+◎滑鼠游標樣式：
+	作業中 cursor:progress
+	十字型 cursor:crosshair
+	箭頭朝上下 cursor:n-resize 或 cursor:s-resize
+	十字箭頭 cursor:move
+	箭頭朝左右 cursor:w-resize 或 cursor:e-resize
+	加一問號 cursor:help
+	箭頭朝左上右下 cursor:nw-resize 或 cursor:se-resize
+	文字I型 cursor:text
+	箭頭斜左下右上 cursor:sw-resize 或 cursor:ne-resize
+	漏斗 cursor:wait
+	手型(IE6) cursor:pointer
+	無法使用(IE6) cursor:not-allowed
+	游標圖案(IE6)  p {cursor:url("游標檔名.cur"),text;}
+
+
+連結偽類
+	a /*所有超連結*/
+	a:link /*超連結文字格式*/
+	a:visited /*瀏覽過的連結文字格式*/
+	a:active /*按下連結的格式*/
+	a:hover /*滑鼠移至連結*/

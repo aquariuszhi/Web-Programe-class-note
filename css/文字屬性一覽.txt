@@ -1,0 +1,40 @@
+文字屬性一覽
+
+color: #000; 			/*色彩*/
+font-size: 9pt; 		/*文字大小*/
+
+font-style: italic; 	/*文字斜體*/
+font-style: normal; 	/*標準文字*/可消除瀏覽器中預設的斜體文字或標籤<i> <em>內的字
+
+font-weight: bold; 		/*文字粗體*/
+font-weight: normal; 	/*標準文字*/ 可以用在消除 h1 ~ h6 的預設粗體或粗體標籤<b> <strong>內的字
+
+font-variant: small-caps; 	/*小型英文大寫*/
+
+letter-spacing: 1pt; 		/*字間距離*/
+word-spacing: 5px;			/*半形空格的間距*/
+
+line-height: 200%; 			/*設定行高*/
+
+vertical-align: sub; 		/*下標字*/
+vertical-align: super; 		/*上標字*/
+
+text-decoration: line-through; 		/*加刪除線*/
+text-decoration: overline; 			/*加頂線*/
+text-decoration: underline; 		/*加底線*/
+text-decoration: none; 				/*刪除底線*/
+
+text-transform: capitalize;			/*首字大寫*/
+text-transform: uppercase; 			/*英文大寫*/
+text-transform: lowercase; 			/*英文小寫*/
+
+text-align: right; 					/*文字靠右對齊*/
+text-align: left; 					/*文字靠左對齊*/
+text-align: center; 				/*文字置中對齊*/
+text-align: justify;				/*文字分散對齊*/
+
+white-space: pre; 					/*讓元素有<pre>標籤功能*/
+
+font-family: ***; /*文字字型*/
+	serif、sans-serif、cursive、fantasy、monospace（常見）
+	MingLiU細明體字型/PMingLiU新細明體字型/DFKai-sb標楷體字型/Microsoft JhengHei微軟正黑體

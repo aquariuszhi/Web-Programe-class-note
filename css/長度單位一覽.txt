@@ -1,0 +1,15 @@
+長度單位
+
+相對單位	
+	em	目前大寫 "M" 的高度
+	ex	目前小寫 "x" 的高度
+	px	pixel, 相對畫素、解析度
+	%	相對於目前設定的百分比（可超過100%）
+
+
+絕對單位	
+	cm	公分 (centimeters)；1cm = 10mm
+	mm	公釐 (millimeters)
+	in	英吋 (inchs)；1in = 2.54cm
+	pt	點 (poits)；1pt = 1/72in
+	pc	大點；picas；1pc = 12pt = 4.23mm

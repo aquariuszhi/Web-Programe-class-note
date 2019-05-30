@@ -1,0 +1,17 @@
+標籤元素邊框空白值
+
+標籤元素內容和標籤元素邊框之間的空白設定
+padding-top: 7px; /*上邊框留空白*/ 
+padding-right: 8px; /*右邊框留空白*/ 
+padding-bottom: 9px; /*下邊框留空白*/ 
+padding-left: 10px; /*左邊框留空白*/
+
+以上全設定改寫成以下型式
+padding: 7px 8px 9px 10px;（依序為上/右/下/左）
+
+
+上下邊框相同設定，左右邊框相同設定可用以下型式
+padding: 8px 10px; （依序為上下/左右）
+
+
+padding: 10px; /*四邊框留空白*/

@@ -1,0 +1,18 @@
+背景屬性一覽
+
+background-color:#fff; /*背景色彩*/ 
+background:transparent; /*透視背景*/
+background-image : url(bg.jpg); /*背景圖片*/ 
+background-attachment : fixed; /*浮水印固定背景*/ 
+background-repeat : repeat; /*重複排列-網頁預設*/
+background-repeat : no-repeat; /*不重複排列*/ 
+background-repeat : repeat-x; /*在 x 軸重複排列*/ 
+background-repeat : repeat-y; /*在 y 軸重複排列*/ 
+
+指定背景位置,以下方式皆可使用 
+background-position : 90% 90%; /*背景圖片x與y軸的位置*/ 
+background-position : top; /*向上對齊*/ 
+background-position : bottom; /*向下對齊*/ 
+background-position : left; /*向左對齊*/ 
+background-position : right; /*向右對齊*/ 
+background-position : center; /*置中對齊*/

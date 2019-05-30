@@ -1,0 +1,81 @@
+CSS 轉場
+
+
+transition-property	用來定義可以產生 transition 屬性效果的屬性名稱，例如寬度、背景顏色 ...。
+
+transition-duration	用來定義 transition 屬性發生的時間，單位為秒。
+
+transition-timing-function	用來定義 transition 效果的發生速度，可說是設定轉場時所依據的貝茲曲線。
+可用已定義函式，如下
+	ease, 等同於 cubic-bezier(0.25, 0.1, 0.25, 1.0)
+	linear, 等同於 cubic-bezier(0.0, 0.0, 1.0, 1.0)
+	ease-in, 等同於 cubic-bezier(0.42, 0, 1.0, 1.0)
+	ease-out, 等同於 cubic-bezier(0, 0, 0.58, 1.0)
+	ease-in-out, 等同於 cubic-bezier(0.42, 0, 0.58, 1.0)
+
+transition-delay	用來定義多久之後開始發生 transition 效果。
+
+
+轉場範例
+EX.
+	#delay1 {
+	  position: relative;
+	  transition-property: font-size;
+	  transition-duration: 4s;
+	  transition-delay: 2s;
+	  font-size: 14px;
+	}
+
+
+偵測 transition 的完成
+	el.addEventListener("transitionend", updateTransition, true);
+
+	propertyName
+	這指出哪個 CSS property 的 transition 已經完成。
+	elapsedTime
+	指出 transition 花費了幾秒。注意，他不受 transition-delay 影響。
+
+
+Animation
+使用 animation 可以製作比較複雜的css3動態效果（可以搭配 from to 的方式來設定動畫）
+	EX.
+	.set_background{
+		animation: 0.9s myCustomAnimate
+	}
+
+	@keyframes myCustomAnimate{
+		from {background: black;}
+	  to {background: white;}
+	}
+
+
+◎屬性
+	animation-name	動畫名稱
+	animation-duration	動畫執行1次所需的時間(s or ms)
+	animation-timing-function	動態執行參數
+	animation-delay	延遲執行時間 (s or ms)
+	animation-iteration-count	播放次數 (可設定數字或 infinite設定為無限)
+
+	animation-direction	播放方向/順序
+		normal(正常播放)
+		reverse (反向播放)
+		alternate (正向撥放，再反向播放)
+		alternate-reverse (反向撥放，再正向播放)
+
+	animation-fill-mode	指定動畫播放完畢的狀態
+		none (回到最初未撥放狀態)
+		forwards (停在最後一個狀態)
+		backwards (停在第一個狀態)
+		both (停留在 animation-direction 最後一個狀態)
+
+	animation-play-state	指定動畫播放或暫停
+		running (預設播放)
+		paused (暫停播放)
+
+
+各瀏覽器對 CSS3 transition 屬性的支援
+	Chrome 26.0 及以上版本開始支援，語法請使用 -webkit- 開頭
+	FireFox 16.0 及以上版本開始支援，語法請使用 -moz- 開頭
+	Safari 6.1 及以上版本開始支援，語法請使用 -webkit- 開頭
+	Opera 12.1 及以上版本開始支援，語法請使用 -o- 開頭
+	IE 10.0 及以上版本開始支援

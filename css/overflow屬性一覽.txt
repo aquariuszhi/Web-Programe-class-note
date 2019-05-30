@@ -1,0 +1,9 @@
+overflow屬性一覽
+
+overflow 屬性值 ： overflow: auto; /*預設使用捲軸*/ 
+overflow: hidden; /*隱藏溢出範圍的內容*/ 
+overflow: scroll; /*使標籤元素產生捲軸*/ 
+overflow: visible; /*顯示全部忽略區塊大小*/ 
+overflow: inherit; /*繼承父元素的可見性*/ IE 專用樣式 
+overflow-x:hidden; /*刪除水平捲軸*/ 
+overflow-y:hidden; /*刪除垂直捲軸*/

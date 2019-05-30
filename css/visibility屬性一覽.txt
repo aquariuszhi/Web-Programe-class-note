@@ -1,0 +1,5 @@
+visibility 屬性的運用
+
+visibility : inherit; /* 繼承父元素的可見性 */ 
+visibility : visible; /* 顯示元素內容 */ 
+visibility : hidden; /* 隱藏元素內容 */

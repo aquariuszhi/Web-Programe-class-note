@@ -1,0 +1,22 @@
+框線屬性一覽
+
+◎邊框顏色
+	border-top-color : #369; /*上框線色彩*/ 
+	border-right-color : #369; /*右框線色彩*/ 
+	border-bottom-color : #369; /*下框線色彩*/ 
+	border-left-color : #369; /*左框線色彩*/ 
+	border-color : #369; /*簡化 四邊框線色彩*/ 
+
+◎邊框寬度 
+	border-top-width :1px; /*上框線寬度*/ 
+	border-right-width :1px; /*右框線寬度*/ 
+	border-bottom-width :1px; /*下框線寬度*/ 
+	border-left-width :1px; /*左框線寬度*/ 
+	border-width :1px; /*簡化 四邊框線寬度*/ 
+
+◎邊框樣式 
+	border-top-style : solid; /*上框線樣式*/ 
+	border-right-style : solid; /*右框線樣式*/
+	border-bottom-style : solid; /*下框線樣式*/
+	border-left-style : solid; /*左框線樣式*/ 
+	border-style : solid; /*簡化 四邊框線樣式*/

@@ -1,0 +1,14 @@
+標籤元素定位效果
+
+製作物件重疊效果必須加上position屬性：
+position : static; /* 無定位 */（預設）
+position : relative; /* 依物件左上角為基準點取相對位置 */
+position : absolute; /* 依網頁左上角為基準點取絕對位置 */
+position : fixed; /* 固定位置不受捲軸影響 */
+控制 position 的位置,可用: top | right | bottom | left。
+EX.
+	span {
+		position: relative;
+		top : 10px;
+		left: 8px;
+	}

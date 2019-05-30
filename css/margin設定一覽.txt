@@ -1,0 +1,16 @@
+標籤元素邊界值
+
+margin-top: 10px; /*上邊界*/ 
+margin-right: 10px; /*右邊界值*/ 
+margin-bottom: 10px; /*下邊界值*/ 
+margin-left: 10px; /*左邊界值*/
+
+以上全設定改寫成以下型式
+margin: 7px 8px 9px 10px;（依序為上/右/下/左）
+
+
+上下邊界相同設定，左右邊界相同設定可用以下型式
+margin: 8px 10px; （依序為上下/左右）
+
+
+margin: 10px; /*四邊界值*/
