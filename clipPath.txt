@@ -1,0 +1,45 @@
+clip-path（http://bennettfeely.com/clippy/） 
+
+	使用 clip-path 要從同一個方向繪製，如果順時針繪製就一律順時針，逆時針就一律逆時針，因為 polygon 是一個連續的線段，若線段彼此有交集，面積區域就會有相減的狀況發生 ( 當然如果這是你要的效果就無妨了 )。
+	如果繪製時採用「比例」的方式繪製，長寬就必須要先行設定，不然有可能繪製出來的長寬和我們想像的就會有落差，使用「像素」繪製就沒有這種問題。
+	
+EX.
+	圓形 circle( 半徑 at 圓心座標 )
+	.circle{
+		width:100px;
+		height:100px;
+		background:#0cc;
+		-webkit-clip-path:circle(50% at 50% 50%);
+	}
+	
+	正三角形
+	.a{
+		width:100px;
+		height:87px;
+		background:#c00;
+		-webkit-clip-path:polygon(0% 100%, 50%  0%,100% 100%);
+	}
+	
+	正方形
+	.b{
+		width:100px;
+		height:100px;
+		background:#069;
+		-webkit-clip-path:polygon(0% 0%, 0% 100%,100% 100%,100% 0%);
+	}
+	
+	正五邊形
+	.c{
+		width:162px;
+		height:154px;
+		background:#095;
+		-webkit-clip-path:polygon(0% 38.31%, 50% 0%,100% 38.31%,80.86% 100%,19.14% 100%);
+	}
+	
+	正六邊形
+	.d{
+		width:200px;
+		height:174px;
+		background:#f80;
+		-webkit-clip-path:polygon(25% 0%, 75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);
+	}
