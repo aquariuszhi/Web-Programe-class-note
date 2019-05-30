@@ -1,0 +1,28 @@
+DOM(Document Object Model):為瀏覽器提供讓程式語言操縱html的模組。
+
+添加Event Listener(可讓script標籤放在head內做控制）
+語法：
+	document.addEventListener('DOMContentLoaded', function (){
+		var test = document.getElementById('#test');
+	})
+	
+	
+常用的DOM操作
+document.getElementById ：根據ID查找元素，如果有多個结果，只返回第一個。
+document.getElementsByClassName ：根據類名查找元素，多個類名用空格分隔，返回一個HTMLCollection，能動態更新查詢到的元素。
+document.getElementsByTagName ：根據標籤查找元素， * 表示查询所有標籤，返回一個HTMLCollection。
+document.getElementsByName ：根據元素的name属性查找，返回一個NodeList。
+document.querySelector ：返回單個Node，如果找到到多個结果，只返回第一個（可用,分隔查找多個元素）。
+document.querySelectorAll ：返回一個NodeList，不能動態更新查詢到的元素（可用,分隔查找多個元素）。
+document.forms ：獲取當前頁面所有form，返回一個HTMLCollection。
+document.createElement: 新增標籤。
+document.body.appendChild: 新增區塊。
+element1.insertBefore：新增元素。
+document.querySelector.removeChild: 刪除區塊。
+newDiv.classList.add: 新增class名稱。
+newDiv.classList.remove: 刪除class名稱。
+newDiv.classList.toggle: 是0就變1，是1就變0
+
+
+$(function{}); = $(document).ready(function(){})
+DOM加載完成後，即可啟動該函式。
