@@ -1,0 +1,35 @@
+API 串接(http://youmightnotneedjquery.com)
+
+Post
+	var request = new XMLHttpRequest();
+	request.open('POST', '/my/url', true);
+	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+	request.send(data);
+	
+Request
+	var request = new XMLHttpRequest();
+	request.open('GET', '/my/url', true);
+
+	request.onload = function() {
+	  if (request.status >= 200 && request.status < 400) {
+		// Success!
+		var resp = request.responseText;
+	  } else {
+		// We reached our target server, but it returned an error
+
+	  }
+	};
+
+	request.onerror = function() {
+	  // There was a connection error of some sort
+	};
+
+	request.send();
+	
+	
+Restful API:以resource為中心（CRUD = create/read/update/delete）。
+	GET/posts		列出資源
+	POST/posts		新增資源
+	GET/posts/id	得到資源
+	PUT/posts/id	修改資源
+	DELETE/posts/id	刪除資源
