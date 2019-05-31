@@ -1,0 +1,1 @@
+CREATE TABLE `CommentBoard`.`MainComment` ( `id_main` INT NOT NULL AUTO_INCREMENT , `nickname` VARCHAR(10) NOT NULL , `comment` TEXT NOT NULL , `datetime` DATE NOT NULL , PRIMARY KEY (`id_main`)) ENGINE = InnoDB;
