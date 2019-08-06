@@ -25,11 +25,33 @@ Request
 	};
 
 	request.send();
-	
-	
+
+
 Restful API:以resource為中心（CRUD = create/read/update/delete）。
 	GET/posts		列出資源
 	POST/posts		新增資源
 	GET/posts/id	得到資源
 	PUT/posts/id	修改資源
 	DELETE/posts/id	刪除資源
+
+
+onreadystatechange 事件
+	當請求被發送到伺服器時，可能需要執行一些基於響應的任務，每當readyState改變時，就會觸發onreadystatechange事件。
+	而readyState屬性存有XMLHttpRequest的狀態信息，從0～4發生變化。
+	0: 請求未初始化
+	1: 服務器連結已建立
+	2: 請求已接收
+	3: 請求處理中
+	4: 請求已完成，且響應已就緒
+	
+	status	
+	200: "OK"
+	404: 未找到頁面
+	
+	每當readyState改變時，就可使用onreadystatechange存儲函數。
+	範例：
+	xmlhttp.onreadystatechange = function(){
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+			document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+	  }
+	}

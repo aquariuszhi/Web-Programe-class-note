@@ -1,0 +1,66 @@
+XSS(Cross-Site Scripting)：在別人網頁執行javascript。
+	防範方法：escape(跳脫）
+	<?php echo html specialchars($str,ENT_QUOTES,'UTF-8') ?>
+
+	
+SQL Injection：攻擊者能夠注入（inject）一些特殊字串來執行他想要的結果。
+	防範方法：prepare statement
+	$sql = $conn->prepare("SELECT * FROM users WHERE username = ? and password = ?");
+	$sql -> bind_param("ss", $username, $password);
+	$sql ->execute();
+	$result = $sql->get_result();
+	
+	*bind_param需要指定變數的型別。
+		i = 整數
+		d = 雙精確度浮點數
+		s = 字串
+		b = bolb物件（binary large object）
+
+
+CSRF(Cross Site Request Forgery)：跨站（網域）請求偽造。
+	防範方法：
+		1.Double Submit Cookie：由 server 產生一組隨機的 token 並且加在 form 上面，同時也讓 client side 設定一個名叫 csrftoken 的 cookie，值也是同一組 token。
+		EX.
+		
+		Set-Cookie: csrftoken=fj1iro2jro12ijoi1
+		<form action="https://small-min.blog.com/delete" method="POST">
+		  <input type="hidden" name="id" value="3"/>
+		  <input type="hidden" name="csrftoken" value="fj1iro2jro12ijoi1"/>
+		  <input type="submit" value="刪除文章"/>
+		</form>
+		
+		2.browser 本身的防禦：設定cookie只允許 same site 使用，不允許在任何的 cross site request 被加上去。
+							  SameSite 有兩種模式，Lax跟Strict，預設是Strict。
+							  
+							  Lax 模式放寬了一些限制，例如說<a>, <link rel="prerender">, <form method="GET"> 這些都還是會帶上 cookie。但是 POST 方法 的 form，或是只要是 POST, PUT, DELETE 這些方法，就不會帶上 cookie。
+		EX.
+		Set-Cookie: session_id=ewfewjf23o1; SameSite
+		或
+		Set-Cookie: session_id=ewfewjf23o1; SameSite=Lax
+		
+		
+維持登入狀態：應用session認證。
+			  1.會員輸入帳號密碼，按下登入。
+			  2.若錯誤，返回錯誤訊息。
+			  3.若正確，亂數產生一個通行證 ID（function uniqid()），並且在資料庫裡面記下通行證 ID 與會員 ID 的對應關係。
+				  EX.
+				  uniqid(prefix,more_entropy)
+					prefix:前綴，可增加唯一性。
+					more_entropy:產生更長的字串（true || false)。
+				  
+				  最佳解：
+				  uniqid(mt_rand(), true)
+			  
+			  4.把通行證 ID 設置到 Cookie。
+			  5.下次再發 Request 來，就會把通行證 ID 一起帶上來。
+			  6.檢查通行證 ID 是否有對應到的 ID，有的話就代表是那個人。
+			  
+			  
+			  
+密碼安全性：使用雜湊函數（Hash function，有SHA256和bcrypt等種類）：將無限的輸入對上有限的輸出。
+		EX.
+		<?php 
+				password_hash($password, PASSWORD_DEFAULT); 
+				$password_hash = substr($password_hash, 0, 60 );
+		?>
+		驗證：<?php password_verify('$password',$password_hash); ?>

@@ -1,0 +1,12 @@
+*RWD(Responsive Web Design)：自適應網站。
+	
+	1. html加上
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	
+	2. css使用Media Query
+		EX.
+			@media screen and (max-width : 700px){
+				body{
+					background: red;
+				}
+			}

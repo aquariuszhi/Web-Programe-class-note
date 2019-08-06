@@ -8,6 +8,8 @@ background-repeat : repeat; /*重複排列-網頁預設*/
 background-repeat : no-repeat; /*不重複排列*/ 
 background-repeat : repeat-x; /*在 x 軸重複排列*/ 
 background-repeat : repeat-y; /*在 y 軸重複排列*/ 
+background-size: cover; /*放大填滿區塊*/
+background-size: contain; /*縮小填滿區塊*/
 
 指定背景位置,以下方式皆可使用 
 background-position : 90% 90%; /*背景圖片x與y軸的位置*/ 

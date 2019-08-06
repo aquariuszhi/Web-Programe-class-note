@@ -5,5 +5,7 @@ display : block : 將資料內容分段顯示,並且可設定元素的寬與高�
 display : lnline : 將資料顯示在同一行不分段,元素內的寬高不可改變。
 display : inline-block : 將資料顯示在同一行,同時擁有區塊等級,所以可設定元素的寬與高
 
+box-sizing: border-box;  定義box尺寸
+
 <body>和<div>標籤擁有block屬性
 <span>和<p>標籤擁有inline屬性
