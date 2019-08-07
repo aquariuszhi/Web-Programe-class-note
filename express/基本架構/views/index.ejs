@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		// 跳脫引入檔案（防XSS）
+		<%- include('header')%>
+		<%- include('css')%>
+
+		<script type = 'text/javascript'>
+			document.addEventListener('DOMContentLoaded', function(){
+				
+			})
+
+		</script>
+	</head>
+	<body>
+		<div>
+			<div>
+				<%	
+					//在html使用javascript需用<% 內容 %>包起，類似PHP語法。
+					if(!sessionNum) { 
+				%>
+						<div></div>
+				<%	} else { %>
+					<span>使用者：&lt <%= sessionNum /*等號為express跳脫語法（可防XSS）*/ %> &gt </span>
+				<% } %>
+			</div>
+		</div>
+	</body>
+</html>

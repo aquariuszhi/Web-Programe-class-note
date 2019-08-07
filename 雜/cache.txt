@@ -1,0 +1,45 @@
+cache快取：將不太會變動的資料，存在瀏覽器中，讓使用者短時間再次造訪該網頁時不用再重新下載資料。
+
+原理：
+在 HTTP Response Header 裡面加上一個Expires的字段，並設置 Cache 到期的時間，例如：Expires: Wed, 21 Oct 2017 07:28:00 GMT。
+（舊版本cache，Expires 的時間是用「電腦本身的時間」）
+當下一次使用者再度造訪這個頁面或是要求這個圖片的資源的時候，瀏覽器會檢視「現在的時間」是否有超過這個 Expires。如果沒有超過的話，那瀏覽器「不會發送任何 Request」，而是直接從電腦裡面已經存好的 Cache 拿資料（Status code 200 (from disk cache)）。
+
+
+Cache-Control 與 max-age
+Cache-Control: max-age=30 => 代表這個 Response 的過期時間是 30 秒（max-age會蓋過Expires）。
+
+
+Last-Modified 與 If-Modified-Since
+Last-Modified的 Header，表示這個檔案上一次更改是什麼時候。而當快取過期，瀏覽器下次再發送 Request 的時候，就可以利用這個資訊，改用If-Modified-Since來跟 Server 指定拿取：某個時間點以後有更改的資料。
+
+Ex.
+
+response
+Last-Modified: 2017-01-01 13:00:00
+Cache-Control: max-age=31536000
+
+request
+GET /logo.png
+If-Modified-Since: 2017-01-01 13:00:00
+
+
+Etag 與 If-None-Match
+用「檔案內容更動與否」來當作是否要更新快取的條件。
+
+Ex.
+
+response
+ETag:"adf123"
+Cache-Control: max-age=31536000
+
+request
+GET /file
+If-None-Match: "adf123"
+
+
+Cache-Control: no-store（不存入快取）
+Cache-Control: no-cache（每次發送 Request 去確認是否有新的檔案）
+
+
+把 Etag 的機制自己實作在檔案裡面可達成「只要檔案不更新，瀏覽器就不會發 Request，直接沿用快取裡的即可。只要檔案一更新，瀏覽器就要立即抓取新的檔案」。

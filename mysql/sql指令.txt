@@ -1,0 +1,10 @@
+$sql = "SELECT * FROM table ORDER BY id_main DESC";  //ORDER BY 將資料排序（DESC降冪/ESC升冪）並選取所有資料
+$sql = "SELECT * FROM table ORDER BY id_main  LIMIT $start, $offset";  //限制取得某個區間的資料
+$sql = "SELECT * FROM table WHERE account = ? AND password = ?";  //取得特定資料
+$sql_insert = "INSERT INTO table(欄位名稱) VALUES(值)";  //輸入資料
+$sql_del = "DELETE FROM maincomment WHERE id_main = ?";  //刪除資料
+$sql_put = " UPDATE maincomment SET comment = ? WHERE id_main = ?";  //更新資料
+$conn->close(); //關閉連線
+$result = $conn->query($sql);  //執行$sql
+$sql_num = ($result_main->num_rows);  //取得資料數目
+$row = $result->fetch_assoc();  //將資料一項一項依序列出

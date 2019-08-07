@@ -1,0 +1,11 @@
+若要在html內使用javascript語法，須用<% javascript語法 %>，類似PHP語法。
+<%= 變數 %>可跳脫防範XSS（ejs渲染引擎）
+
+req.params => 可以存取path的變數
+req.query => 可以存取url/?的變數
+req.body => 可以存取post的變數
+
+app.use(express.static('public')) //無須設定即可直接存取該資料夾內的檔案
+
+PM2套件可以使網站跑在背景程式（npm install pm2）
+

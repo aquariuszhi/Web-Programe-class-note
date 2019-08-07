@@ -1,0 +1,9 @@
+//封裝查詢（防sql注入）
+$sql = $conn->prepare("SELECT 欄位 FROM table1 JOIN table2 WHERE str = ?");
+$sql -> bind_param("s", $row_id_reg["user_id"]);
+$sql -> execute();
+$result = $sql->get_result();
+$row = $result->fetch_assoc();
+
+//escape跳脫輸出資料(防XSS)
+echo htmlspecialchars($row_Nickname["nickname"], ENT_QUOTES, 'UTF-8');

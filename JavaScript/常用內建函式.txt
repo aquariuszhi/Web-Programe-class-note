@@ -51,3 +51,30 @@ a.forEach(b())：對陣列a每一個函式做計算後不回傳陣列a。
 a.fill()：將陣列所有元素填滿。
 
 *函式內return 負數表示程式不正常中止，return 0 表示程序正常中止，return 1 表示程式正常運作。
+
+
+其他
+
+var res = JSON.parse(resp)  //讀取json格式資料
+
+div.classList.toggle('className')  //非true即false，適用於需要來回切換的場合
+
+document.cookie='session=; expires=Thu, 01 Jan 1970 00:00:00 GMT'  //設定cookie/session
+
+
+確認是否為英文或數字
+
+正整數檢核     /[^0-9]/g 
+英文檢核      /[^a-z^A-Z]/g
+正整數英文檢核     /[^a-z^A-Z^0-9]/g  
+
+<script>
+    var str=document.form.text.value;
+    re = /\W/;
+    if (re.test(txt)){
+        alert("不是英文或數字");
+        return false;
+    }else{
+        alert('這是英文或數字');
+    }
+</script>

@@ -22,21 +22,30 @@ CSRF(Cross Site Request Forgery)：跨站（網域）請求偽造。
 		1.Double Submit Cookie：由 server 產生一組隨機的 token 並且加在 form 上面，同時也讓 client side 設定一個名叫 csrftoken 的 cookie，值也是同一組 token。
 		EX.
 		
-		Set-Cookie: csrftoken=fj1iro2jro12ijoi1
-		<form action="https://small-min.blog.com/delete" method="POST">
-		  <input type="hidden" name="id" value="3"/>
-		  <input type="hidden" name="csrftoken" value="fj1iro2jro12ijoi1"/>
-		  <input type="submit" value="刪除文章"/>
-		</form>
+		前端（react-redux）:
+		var rand = function() {
+			return Math.random().toString(36).substr(2); // 將隨機數轉36進位的字串，並跳過0
+		};
+		var token = function() {
+			return rand() + rand(); // to make it longer
+		};
+		var xsrftoken = token()
+		document.cookie = `XSRF-TOKEN=${token()}` //設定cookie
+		
+		後端（codeigniter）:
+		$this->load->helper('cookie');
+		$cookie = get_cookie("XSRF-TOKEN", false);
+		$header = $this->input->get_request_header('X-XSRF-TOKEN', TRUE);
+		if($cookie === $header){...}
 		
 		2.browser 本身的防禦：設定cookie只允許 same site 使用，不允許在任何的 cross site request 被加上去。
 							  SameSite 有兩種模式，Lax跟Strict，預設是Strict。
 							  
 							  Lax 模式放寬了一些限制，例如說<a>, <link rel="prerender">, <form method="GET"> 這些都還是會帶上 cookie。但是 POST 方法 的 form，或是只要是 POST, PUT, DELETE 這些方法，就不會帶上 cookie。
-		EX.
-		Set-Cookie: session_id=ewfewjf23o1; SameSite
+		EX(PHP).
+		setcookie("session", "$session", time()+3600*24, '/; samesite = Strict');
 		或
-		Set-Cookie: session_id=ewfewjf23o1; SameSite=Lax
+		setcookie("session", "$session", time()+3600*24, '/; samesite = Lax');
 		
 		
 維持登入狀態：應用session認證。

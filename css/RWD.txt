@@ -10,3 +10,69 @@
 					background: red;
 				}
 			}
+			
+
+網格系統
+@media screen and (max-width: 720px){
+	div{
+		flex-direction: column;
+	}
+	.col-1{
+		width: 100%;
+	}
+}
+@media screen and (max-width: 800px) and (min-width: 721px){
+	.col-2{
+		width: calc((100%/12)*11);
+	}
+}
+@media screen and (max-width: 880px) and (min-width: 721px){
+	.col-3{
+		width: calc((100%/12)*10);
+	}
+}
+@media screen and (max-width: 960px){
+	.col-4{
+		width: calc((100%/12)*9);
+	}
+}
+@media screen and (max-width: 1040px){
+	.col-5{
+		width: calc((100%/12)*8);
+	}
+}
+@media screen and (max-width: 1120px){
+	.col-6{
+		width: calc((100%/12)*7);
+	}
+}
+@media screen and (max-width: 1200px){
+	.col-7{
+		width: calc((100%/12)*6);
+	}
+}
+@media screen and (max-width: 1280px){
+	.col-8{
+		width: calc((100%/12)*5);
+	}
+}
+@media screen and (max-width: 1360px){
+	.col-9{
+		width: calc((100%/12)*4);
+	}
+}
+@media screen and (max-width: 1440px){
+	.col-10{
+		width: calc((100%/12)*3);
+	}
+}
+@media screen and (max-width: 1520px){
+	.col-11{
+		width: calc((100%/12)*2);
+	}
+}
+@media screen and (max-width: 1600px){
+	.col-12{
+		width: calc(100%/12);
+	}
+}

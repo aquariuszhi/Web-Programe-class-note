@@ -34,6 +34,8 @@ text-align: center; 				/*文字置中對齊*/
 text-align: justify;				/*文字分散對齊*/
 
 white-space: pre; 					/*讓元素有<pre>標籤功能*/
+white-space: nowrap;                /*空白不換行*/
+word-wrap: break-word;              /*強制自動換行*/
 
 font-family: ***; /*文字字型*/
 	serif、sans-serif、cursive、fantasy、monospace（常見）

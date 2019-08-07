@@ -1,0 +1,19 @@
+strlen($str); //英文字串長度
+mb_strlen($nickname,'utf8');  //中文字串長度
+
+require_once('檔案'); //引用檔案（不重複引用）
+
+isset($_GET["str"]); //確認網址是否含str變數
+!isset($_COOKIE["str"])  //確認cookie是否含str變數
+
+$password_hash = password_hash($password, PASSWORD_DEFAULT);  //使用雜湊函數隱藏密碼
+password_verify($password,$row['password'])  //確認雜湊函數和變數是否相同
+
+header('Location: 網址'); //redirect
+
+setcookie("session", "$session", time()+3600*24, '/; samesite = Lax');  //設定cookie和session
+unset($_COOKIE['session']);  //卸除session
+setcookie('session', null, -1, '/');
+
+$arr = array('result' => 'success', 'nickname' => $nickname, 'datetime' => $datetime, 'id_main' => $id_main_ajax );
+echo json_encode($arr); //將資料轉為json格式
