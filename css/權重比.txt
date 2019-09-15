@@ -1,0 +1,18 @@
+*（000）
+1 Element (001)
+2 Element (002)
+9 Element (009)
+Class (010)
+Pseudo-Class (010)
+1 Element 1 Class (011)
+1 Element 1 Attribute (011)
+1 Element 1 Pseudo-Class (011)
+2 Element 1 Attribute (012)
+1 Element 1 Class 1 Pseudo-Class (021)
+1 Element 1 Class 1 Attribute (021)
+9 Class/Attribute Pseudo-Class (090)
+1 ID selector (100)
+2 Types 2 Class/Attribute 1 ID selector (122)
+2 ID selector 1 Type selector (201)
+Inline style (1000)[ex. style = '']
+!important(10000)

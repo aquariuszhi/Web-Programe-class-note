@@ -1,0 +1,8 @@
+column-count(分割列數)
+column-gap(列間間隙)
+column-rule-style(列間邊框)
+column-rule-width(邊框厚度)
+column-rule-color(邊框顏色)
+column-rule(綜合屬性)
+column-span(標題橫跨)
+column-width(列寬)

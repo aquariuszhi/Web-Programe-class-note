@@ -1,0 +1,26 @@
+Html自定義屬性，皆使用data-*(*字串不可含大寫)
+
+EX.
+	<div id="slider" data-type="slideShow">
+	  <img class='photo' data-item="1" data-size="xs"/>
+	  <img class='photo' data-item="2" data-size="lg"/>
+	</div>
+	
+
+JS取值方法：
+	let slider = document.getElementById('slider')
+	console.log(slider.dataset.type)
+	
+jQuery取值方法：
+	console.log($('#slider').data('type')); //  "slideShow"
+	
+CSS取值方法：
+	photo::before{
+	  content: attr(data-item);
+	}
+	
+	或
+	
+	#slider img[data-size="xs"] {
+	  width: 400px;
+	}

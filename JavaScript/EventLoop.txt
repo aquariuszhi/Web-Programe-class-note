@@ -1,0 +1,8 @@
+Event Loop：事件執行序，用來處理非同步事件的方法。
+
+call stack：事件堆疊，後進先出。
+callback queue：非同步事件序列，先進先出（去call stack），其中queue又分macrotask queue和microtask queue，microtask queue執行順序優先masktask queue。
+	macrotask queue：在每一次事件中只會提取一次task執行。
+		macrotask包含：setTimeout, setInterval, setImmediate, I/O, UI rendering
+	microtask queue：在每一次事件中會一直提取到microtask清空為止。
+		microtask：process.nextTick、Promises、MutationObserver。

@@ -1,0 +1,14 @@
+圓角
+border-radius: 5px(左上角) 5px(右上角) 5px(右下角) 5px(左下角);
+border-top-right-radius: 5px(右上角));
+相容性：IE9/chrome5.0(-webkit-4.0)/firefox4.0(-moz-3.0)/safari5.0(-webkit-3.1)/Opera10.5
+
+盒陰影
+box-shadow：10px(右位移) 10px（下位移） 5px（模糊程度） #888888(顏色);
+
+邊界圖片：可以用圖像作為邊框
+div{
+    border-image:url(border.png) 30 30 round;
+    -webkit-border-image:url(border.png) 30 30 round; /* Safari 5 and older */
+    -o-border-image:url(border.png) 30 30 round; /* Opera */
+}

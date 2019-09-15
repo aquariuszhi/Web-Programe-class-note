@@ -10,7 +10,13 @@
 					background: red;
 				}
 			}
-			
+	3. 使用vw(裝置總寬度)/vh(裝置總高度)
+		EX.
+			width: 20vw;
+			height: 20vh;
+
+	4. 使用vmin(裝置寬度最小)/vmax(裝置寬度最大)
+
 
 網格系統
 @media screen and (max-width: 720px){

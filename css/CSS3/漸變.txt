@@ -1,0 +1,17 @@
+Gradients(漸變)：可顯示多個顏色之間的漸層特效。
+
+Gradients分為
+
+    Linear Gradients(線形漸變)：
+        EX1. background: -webkit-linear-gradient(left top, red , blue);
+        EX2. background: -webkit-linear-gradient(180deg, red, blue);
+        EX3. background: -webkit-linear-gradient(left,red,orange,yellow,green,blue,indigo,violet);
+        EX4. background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,0,0,1));
+
+    Radial Gradients(徑向漸變)
+        EX1. background: -webkit-radial-gradient(red, green, blue);
+        EX2. background: -webkit-radial-gradient(red 5%, green 15%, blue 60%)
+        EX3. background: -webkit-radial-gradient(circle, red, yellow, green);
+        EX4. background: -webkit-radial-gradient(60% 55%, closest-side,blue,green,yellow,black);
+        （尺寸大小：closest-side/farthest-side/closest-corner/farthest-corner）
+        EX5. background: -webkit-repeating-radial-gradient(red, yellow 10%, green 15%);

@@ -1,0 +1,20 @@
+文字效果：
+    text-shadow： 5px 5px 5px #FF0000;
+    box-shadow： 10px 10px 5px grey;
+    text-overflow： clip/ellipsis;
+    word-wrap： break-word;
+    word-break： keep-all/break-all;
+
+字體：
+    @font-face
+    {
+        font-family: myFirstFont;
+        src: url(sansation_light.woff);
+        font-weight:bold;
+    }
+
+    font-family：字體名稱
+    src：字體文件位址
+    font-stretch：字體拉伸
+    font-style：字體樣式
+    font-weight：字體粗細

@@ -1,0 +1,20 @@
+2D
+
+transform
+    translate(移動)
+    rotate(旋轉)
+    scale(縮放)
+    skew(傾斜)
+    matrix(六個参数，包含旋轉，缩放，移動（平移）和倾斜功能)
+
+transform-origin(變更位置做轉換)
+
+
+3D
+
+transform：向元素應用2D或3D轉换。
+transform-origin：改變被轉换元素的位置。
+transform-style：规定被嵌套元素如何在3D空間中顯示。
+perspective：规定3D元素的透視效果。
+perspective-origin：规定3D元素的底部位置。
+backface-visibility：定義元素在不面對屏幕時是否可見。

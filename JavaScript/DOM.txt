@@ -4,8 +4,15 @@ DOM(Document Object Model):為瀏覽器提供讓程式語言操縱html的模組�
 語法：
 	document.addEventListener('DOMContentLoaded', function (){
 		var test = document.getElementById('#test');
-	})
+	},false)
 	
+	addEventListener第三個參數：
+		false：把listenter放在冒泡階段。（預設）
+		true：把listenter放在捕獲階段。
+			捕獲階段：在監聽從window到target的過程稱為捕獲。
+			冒泡階段：在監聽從target到window的過程稱為冒泡。
+			※target本身無分捕獲或冒泡階段。
+			※事件代理（delegation）：target太多，因此監聽上一層再對下一層動作。
 	
 常用的DOM操作
 document.getElementById ：根據ID查找元素，如果有多個结果，只返回第一個。
@@ -26,3 +33,5 @@ newDiv.classList.toggle: 是0就變1，是1就變0
 
 $(function{}); = $(document).ready(function(){})
 DOM加載完成後，即可啟動該函式。
+
+※ e.stopPropagation：停止傳遞事件。

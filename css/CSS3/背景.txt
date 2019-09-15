@@ -1,0 +1,18 @@
+background-image：添加背景圖片，並可以給不同圖片設置多個不同屬性。
+#example1 { 
+    background-image: url(img_flwr.gif), url(paper.gif); 
+    background-position: right bottom, left top; 
+    background-repeat: no-repeat, repeat; 
+}
+
+#example2 {
+    background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+}
+
+background-size：80px 60px/100% 100%(寬高);
+
+background-Origin：指定背景圖像的位置區域。
+＃ex.background-origin:content-box/padding-box/border-box;
+
+background-clip：可以指定位置開始繪製背景。
+＃ex.background-clip:content-box/padding-box/border-box;
