@@ -1,0 +1,102 @@
+<canvas> 新元素
+<canvas>標籤定義圖形，比如圖表和其他圖像。该標籤基於JavaScript的繪圖API，須設定ID。
+    EX.
+        <canvas id="myCanvas" width="200" height="100"
+            style="border:1px solid #000000;">
+        </canvas>
+
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");  //html內建繪圖函式庫
+        填色框
+        ctx.fillStyle="#FF0000";
+        ctx.fillRect(0,0,150,75);  //二維座標，左上角為0,0，向右向下為正。
+        直線
+        ctx.moveTo(0,0);  //開始座標
+        ctx.lineTo(200,100);  //結束座標
+        ctx.stroke();  //繪製線條
+        圓或弧
+        ctx.beginPath();
+        ctx.arc(95,50,40,0,2*Math.PI);  //(x,y,r,start,stop)
+        ctx.stroke();
+        文本
+        ctx.font="30px Arial";
+        ctx.fillText("Hello World",10,50);  //實心文字(text,x,y)
+        ctx.strokeText("Hello World",10,50);  //空心文字
+        線性漸變
+        var grd=ctx.createLinearGradient(0,0,200,0);
+        grd.addColorStop(0,"red");  //漸變起始
+        grd.addColorStop(1,"white");  //漸變終點
+        ctx.fillStyle=grd;  //填充漸變
+        ctx.fillRect(10,10,150,80);
+        徑向漸變
+        var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
+        ctx.fillStyle=grd;
+        ctx.fillRect(10,10,150,80);
+        圖片布局
+        var c=document.getElementById("myCanvas");
+        var ctx=c.getContext("2d");
+        var img=document.getElementById("scream");
+        ctx.drawImage(img,10,10);
+
+
+新多媒體元素
+<audio>定義音頻內容
+    EX.
+        <audio controls>
+            <source src="horse.ogg" type="audio/ogg">
+        </audio>
+
+<video>定義視頻（video 或者movie）
+    EX.
+        <video width="320" height="240" controls>
+            <source src="movie.mp4" type="video/mp4">
+        </video>
+        function playPause()
+        { 
+            if (myVideo.paused) 
+            myVideo.play(); 
+            else 
+            myVideo.pause(); 
+        } 
+
+<source>定義多媒體资源<video>和<audio>
+<embed>	定義嵌入的内容，比如插件。
+<track>	為諸如<video>和<audio>元素之類的媒介规定外部文本軌道。
+
+新表單元素
+<datalist>定義選項列表。請與input元素配合使用該元素，來定義input可能的值。
+<keygen>规定用於表單的密鑰對生成器字段。
+<output>定義不同類型的输出，比如腳本的输出。
+
+新的語義和結構元素
+<article>定義頁面獨立的内容區域。
+<aside>定義頁面的側邊欄内容。
+<bdi>允许設置一段文本，使其脫離其父元素的文本方向設置。
+<command>定義命令按钮，比如單選按钮、複選框或按钮。
+<details>用於描述文檔或文檔某個部分的细節。
+<dialog>定義對話框，比如提示框。
+<summary>標籤包含details元素的標題。
+<figure>规定獨立的資料内容（圖像、圖表、照片、代碼等等）。
+<figcaption>定義<figure>元素的標题
+<footer>定義section或document的頁腳。
+<header>定義了文檔的頭部區域。
+<mark>定義带有記號的文本。
+<meter>定義度量衡，僅用於已知最大和最小值的度量。
+<nav>定義導航連接的部分。
+<progress>定義任何類型的任務的進度。
+<ruby>定義ruby註釋（中文注音或字符）。
+<rt>定義字符（中文注音或字符）的解释或發音。
+<rp>在ruby注釋中使用，定義不支持ruby元素的瀏覽器所顯示的内容。
+<section>定義文檔中的節（section、區段）。
+<time>定義日期或時間。
+<wbr>规定在文本中的何處適合添加换行符。
+
+
+語意元素位置示意
+    <header>
+     <nav>
+<article><aside>
+<section><aside>
+    <footer>

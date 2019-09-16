@@ -1,0 +1,67 @@
+ 新元素
+ <datalist>自動完成
+    EX.
+        <input list="browsers">
+            <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+
+<keygen>驗證元素
+    EX.
+        <form action="demo_keygen.asp" method="get">
+            用户名: <input type="text" name="usr_name">
+            加密: <keygen name="security">
+            <input type="submit">
+        </form>
+
+<output>計算或腳本輸出
+    EX.
+        <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+            <input type="range" id="a" value="50">100 +
+            <input type="number" id="b" value="50">=
+            <output name="x" for="a b"></output>
+        </form>
+
+
+新屬性
+autocomplete：表單自動完成(on/off)
+novalidate：不驗證表單。
+autofocus：自動聚焦。
+form：將輸入框做表單歸屬。
+    EX.
+        <form action="demo-form.php" id="form1">
+            First name: <input type="text" name="fname"><br>
+            <input type="submit" value="提交">
+        </form>
+ 
+        Last name: <input type="text" name="lname" form="form1">
+
+
+formaction：表單提交的url位址，會覆蓋action，用於submit或image。
+formenctype：提交表單時的編碼，會覆蓋enctype，用於submit或image。
+formmethod：提交表單的方法，會覆蓋method，用於submit或image。
+formnovalidate：不驗證表單，會覆蓋novalidate，用於submit或image。
+formtarget：提交後的展示(如彈出視窗)，會覆蓋target，用於submit或image。
+height與width：可使瀏覽器得到圖片的寬高，以在渲染時可以保留空間。
+list：規定輸入域的datalist。
+    EX.
+        <input list="browsers">
+
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+
+min與max：限定數值，用於input type=data/number/range。
+multiple：可選多個值，用於input type=email/file。
+pattern (regexp)：驗證input值，EX. pattern="[A-Za-z]{3}(輸入a-z或A-Z，限三個字)。
+placeholder：提示字元。
+required：不得為空。
+step：創造數字間隔，可搭配max和min使用。

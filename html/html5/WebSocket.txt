@@ -1,0 +1,78 @@
+WebSocket：瀏覽器和伺服器只須一次握手，兩者之間就可以創見持久性的連接，並進行雙向的溝通。
+    屬性
+        Socket.readyState	
+        只讀屬性readyState表示連接狀態，可以是以下值：
+        0 - 表示連接尚未建立。
+        1 - 表示連接已建立，可以進行通信。
+        2 - 表示連接正在進行關閉。
+        3 - 表示連接已经關閉或者連接不能打開。
+
+        Socket.bufferedAmount	
+        只讀属性bufferedAmount已被send()放入正在隊列中等待傳输，但是還没有發出的UTF-8 文本字節數。
+
+    事件
+        open	Socket.onopen	連接建立時觸發
+        message	Socket.onmessage	客户端接收服務端數據時觸發
+        error	Socket.onerror	通信發生錯誤時觸發
+        close	Socket.onclose	連接關閉時觸發
+
+    方法
+        Socket.send()	使用連接發送數據
+        Socket.close()	關閉連接
+
+    ※須安裝pywebsocket
+
+    EX.
+        <!DOCTYPE HTML>
+        <html>
+            <head>
+                <meta charset="utf-8">
+                <title>菜鸟教程(runoob.com)</title>
+                
+                <script type="text/javascript">
+                    function WebSocketTest()
+                    {
+                        if ("WebSocket" in window)
+                        {
+                        alert("您的浏览器支持 WebSocket!");
+                        
+                        // 打开一个 web socket
+                        var ws = new WebSocket("ws://localhost:9998/echo");
+                            
+                        ws.onopen = function()
+                        {
+                            // Web Socket 已连接上，使用 send() 方法发送数据
+                            ws.send("发送数据");
+                            alert("数据发送中...");
+                        };
+                            
+                        ws.onmessage = function (evt) 
+                        { 
+                            var received_msg = evt.data;
+                            alert("数据已接收...");
+                        };
+                            
+                        ws.onclose = function()
+                        { 
+                            // 关闭 websocket
+                            alert("连接已关闭..."); 
+                        };
+                        }
+                        
+                        else
+                        {
+                        // 浏览器不支持 WebSocket
+                        alert("您的浏览器不支持 WebSocket!");
+                        }
+                    }
+                </script>
+                    
+            </head>
+            <body>
+            
+                <div id="sse">
+                    <a href="javascript:WebSocketTest()">运行 WebSocket</a>
+                </div>
+                
+            </body>
+        </html>

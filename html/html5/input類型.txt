@@ -1,0 +1,15 @@
+input type
+
+color
+date
+datetime
+datetime-local
+email
+month
+number:EX.<input type="number" name="quantity" min="1" max="5">
+range:EX.<input type="range" name="points" min="1" max="10">
+search
+tel
+time
+url
+week

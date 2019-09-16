@@ -1,0 +1,27 @@
+web儲存：在本地儲存用戶的瀏覽數據。
+
+localStorage：用於長久保存整個網站的數據，保存的數據没有過期時間，直到手動去除。
+
+    須驗證客戶端瀏覽器是否支持
+        if(typeof(Storage)!=="undefined")
+        {
+            // 是的! 支持 localStorage  sessionStorage 对象!
+            // 一些代码.....
+        } else {
+            // 抱歉! 不支持 web 存储。
+        }
+
+    使用方法範例
+        localStorage.sitename="菜鸟教程";  //儲存
+        document.getElementById("result").innerHTML="網站名：" + localStorage.sitename;
+
+        localStorage.removeItem("sitename");  //移除
+
+        保存數據：localStorage.setItem(key,value);
+        讀取數據：localStorage.getItem(key);
+        删除單個數據：localStorage.removeItem(key);
+        删除所有數據：localStorage.clear();
+        得到某个索引的key：localStorage.key(index);
+
+
+sessionStorage：用於臨時保存同一窗口(或標籤頁)的數據，在關閉窗口或標籤頁之后將會删除这些數據。

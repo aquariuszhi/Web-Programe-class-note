@@ -1,0 +1,25 @@
+web worker：為運行在後台的javascript，不會影響頁面的性能。
+    EX.
+        var i=0;
+
+        function timedCount()
+        {
+            i=i+1;
+            postMessage(i);  //postMessage向HTML頁面回傳一段訊息
+            setTimeout("timedCount()",500);
+        }
+
+        timedCount();
+
+    須驗證瀏覽氣是否支援
+        if(typeof(Worker)!=="undefined")
+        {
+            // 是的! Web worker 支持!
+            w=new Worker("demo_workers.js");  //創造新的對象，可用onmessage事件監聽器
+        }
+        else
+        {
+            //抱歉! Web Worker 不支持 
+        }
+
+        w.terminate();  //終止web worker

@@ -1,0 +1,20 @@
+pushState()改變同域url而不刷新，並可創建history，配合popstate監聽
+    EX.
+       var state = ( {
+
+            url: ~href, title: ~title, ~additionalKEY: ~additionalVALUE
+
+        } );
+
+        window.history.pushState(state, ~title, ~href);
+
+
+replaceState()改變同域url而不刷新，但不可創建history
+    EX.
+       var state = ( {
+
+            url: ~href, title: ~title, ~additionalKEY: ~additionalVALUE
+
+        } );
+
+        window.history.replaceState( state, ~title, ~href);

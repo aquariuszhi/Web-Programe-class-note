@@ -1,0 +1,24 @@
+SSE(Sever-Sent Event)服務器發送事件：網頁可自動獲取來自伺服器的更新(須後端配合)。
+    EX.
+        前端
+        if(typeof(EventSource)!=="undefined")
+        {
+            var source=new EventSource("demo_sse.php");
+            source.onmessage=function(event)
+            {
+                document.getElementById("result").innerHTML+=event.data + "<br>";
+            };
+        }
+        else
+        {
+            document.getElementById("result").innerHTML="抱歉，你的浏览器不支持 server-sent 事件...";
+        }
+        後端
+        <?php 
+            header('Content-Type: text/event-stream');
+            header('Cache-Control: no-cache');  //不對頁面進行緩存
+
+            $time = date('r'); 
+            echo "data: The server time is: {$time}\n\n"; 
+            flush();  //向網頁刷新數據
+        ?>
