@@ -1,0 +1,11 @@
+\b 退格鍵
+\f 換頁字元
+\n 換行字元(LF)
+\r 歸位字元(CR)
+\t 定位字元
+\\ 反斜線
+\' 單引號
+\" 雙引號
+\xXX Latin-1字串（XX為16進制數值），例如 \x61 => a
+\uXXXX Unicode字串（XXXX為16進制數值），例如 \u6587 =>文
+\u{XXXX} 超過Oxffff（4位的16進制）的Unicode字串

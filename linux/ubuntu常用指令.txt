@@ -1,0 +1,56 @@
+ubuntu terminal常用指令
+
+cat /etc/issue：查詢ubuntu系統版本。
+sudo lsb_release -a：查詢ubuntu系統詳細版本。
+sudo apt-get install apache2：安裝apache。
+sudo apt-get install mysql-server mysql-client：安裝mysql。
+
+安裝node.js步驟
+sudo apt-get update
+sudo apt-get install -y software-properties-common
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+
+sudo apt-get install node.js：安裝node.js
+
+sudo apt install npm：安裝npm。
+sudo npm install n -g：全局安裝n管理器（管理node.js版本）。
+sudo n stable：安裝最新版本node.js。
+sudo node -v：查看node版本。
+
+
+安裝php7.0步驟
+sudo apt-get update
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt-get update
+
+sudo apt-get update
+sudo apt-get install php7.0：安裝php7.0
+
+sudo apt-get update
+sudo apt-get install php7.0-mbstring
+
+
+用戶相關
+useradd -r -m -s /bin/bash：創建普通用戶。
+passwd 用戶名：新用戶密碼。
+chmod -R 777 /etc/sudoers：修改權限（不建議用777）
+vim /etc/sudoers：在文件中新增
+    用戶名 ALL=(ALL:ALL) ALL
+su 用戶名：切換用戶。
+
+
+修改資料夾或檔案權限
+sudo chmod 權限 資料夾/檔案
+    權限：
+        600 只有所有者有讀和寫的權限
+        644 所有者有讀和寫的權限，組用戶只有讀的權限
+        700 只有所有者有讀和寫以及執行的權限
+        666 每個人都有讀和寫的權限
+        777 每個人都有讀和寫以及執行的權限
+
+將文件降為一般文件：
+    sudo chown -R qyh:qyh（用户名） ./wayne(文件名
+    
+用某應用程式開啟檔案：
+    open -a "QuickTime Player" ~/Desktop/filename.mp4

@@ -1,0 +1,83 @@
+結構型directive：透過新增、刪除或取代DOM中的元素來更改Layout，Directive前會加*。
+    自製範例：
+        import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+
+        /**
+        * Add the template content to the DOM unless the condition is true.
+        */
+        @Directive({ selector: '[appUnless]'})
+        export class UnlessDirective {
+         private hasView = false;
+
+        constructor(
+            private templateRef: TemplateRef<any>,
+            private viewContainer: ViewContainerRef) { }
+
+        @Input() set appUnless(condition: boolean) {
+                if (!condition && !this.hasView) {
+                    this.viewContainer.createEmbeddedView(this.templateRef);
+                    this.hasView = true;
+                } else if (condition && this.hasView) {
+                    this.viewContainer.clear();
+                    this.hasView = false;
+                }
+            }
+        }
+    使用：
+        <p *appUnless="condition" class="unless a">
+            (A) This paragraph is displayed because the condition is false.
+        </p>
+
+        <p *appUnless="!condition" class="unless b">
+            (B) Although the condition is true,
+            this paragraph is displayed because appUnless is set to false.
+        </p>
+
+
+屬性型directive：可以更改現有元素的外觀或行為。
+    自製範例：
+        import { Directive, ElementRef } from '@angular/core';
+
+        @Directive({
+            selector: '[appHighlight]'
+        })
+        export class HighlightDirective {
+            constructor(el: ElementRef) {
+                el.nativeElement.style.backgroundColor = 'yellow';
+            }
+        }
+
+    使用：
+        <p appHighlight>Highlight me!</p>
+
+
+HostListener：讓onMouseEnter/onMouseLeave 函式在父層元素發生對應的事件時會被觸發。
+    引入：
+        import { Directive, ElementRef, HostListener } from '@angular/core';
+    使用：
+        @HostListener('mouseenter') onMouseEnter() {
+            this.highlight('yellow');
+        }
+
+        @HostListener('mouseleave') onMouseLeave() {
+            this.highlight(null);
+        }
+
+        private highlight(color: string) {
+            this.el.nativeElement.style.backgroundColor = color;
+        }
+
+Input：令屬性可以用不同方式接受父層傳進來的資料。
+    引入：
+        import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+    使用：
+        @Input() highlightColor: string;
+
+        <p appHighlight highlightColor="yellow">Highlighted in yellow</p>
+        <p appHighlight [highlightColor]="'orange'">Highlighted in orange</p>
+        //若屬性值為某個變數需用[]包住名稱。
+
+    可改成：
+        @Input('appHighlight') highlightColor: string;
+
+        <p [appHighlight]="color">Highlight me!</p>

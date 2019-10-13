@@ -1,0 +1,28 @@
+Map：為操作鍵/值組（關聯陣列）的物件(需用new初始化)，比較鍵值時會用===比較，Map物件中 NaN會等於自身。
+    也可以 let m = new Map([['dog', 'wanwan'], ['cat', 'miymiy']]) 建構子直接初始化。
+
+a.size：元素個數。
+a.get(key, val)：新增元素，重複時覆蓋。
+a.get(key)：依照key取得指定元素。
+a.has(key)：檢驗key元素是否存在。
+a.delete(key)：刪除key元素。
+a.clear()：刪除所有元素。
+a.keys()：取得所有key。
+    可用for (let key of m.keys()){console.log(key)} 取得所有值。
+a.values()：取得所有value。
+    可用for (let value of m.values()){console.log(value)} 取得所有值。
+a.entries()：取得所有key/value組。
+a.forEach(function())：依序對元素進行處理。
+
+
+Set：操作唯一值集合的物件，重複值會被忽略。
+
+a.size：元素個數。
+a.add(value)：新增指定值。
+a.has(value)：檢驗key元素是否存在。
+a.delete(value)：刪除key元素。
+a.clear()：刪除所有元素。
+a.values()：取得所有value。
+    可用for (let value of m.values()){console.log(value)} 取得所有值。
+a.entries()：取得所有key/value組。
+a.forEach(function())：依序對元素進行處理。

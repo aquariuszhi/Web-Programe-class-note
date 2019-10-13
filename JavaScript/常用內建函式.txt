@@ -6,10 +6,15 @@ Number(a)：將字串轉數字。
 parseInt(a, b)：將字串轉成b進位的數字。
 parseFloat(a)：將字串轉數字(浮點數)。
 parseFloat(a).toFixed(b)：將小數取到2位（屬性變字串）。
+Math.abs(b)：b的絕對值。
+Math.max(b, c, d)：找b,c,d中最大值者。
+Math.min(b, c, d)：找b,c,d中最小值者。
+Math.pow(b, c)：b的c次方。
 Math.PI：叫出π。
 Math.ceil()：無條件進位。
 Math.floor()：無條件捨去。
 Math.round()：四捨五入。
+Math.trunc()：直接捨去小數。 ※ES6
 Math.sqrt()：開根號。
 Math.pow(a, b)：a的b次方。
 Math.random()：隨機取得 0<= x <= 1 的數。
@@ -22,35 +27,66 @@ a.toString()：將數字變字串，可用(a + '')代替。
 a.toLowerCase()：將a字串全部變小寫。
 a.toUpperCase()：將a字串全部變大寫。
 String.fromCharCode()：將數字轉成代表的字。
+a.charAt(b)：取出第b+1的字。
 a.charCodeAt(0)：字串中第零個字代表的數字(ps.字串也可以比大小)。
-a.indexOf(b)：在a變數中確認有無b字串。
+a.indexOf(b)：從前端搜尋a變數中確認有無b字串。
 	有 → 回傳b字串的第一個字在a中的位置。
 	無 → 回傳負數。
+a.lastIndexOf(b):從後端搜尋a變數中確認有無b字串。
 a.replace('b', 'c')：將變數a中的b字串第一個字改成c（可用(/b/g, 'c')換掉全部的b），
 a.split('b')：將b字串當斷點切割變數a（回傳為陣列）。
 a.trim()：將空隔去掉。
-a.slice(b, c)：提取字串中第b個～第c-1個。
+a.slice(b, c)：提取字串中第b個～第c-1個。 ※c>b則回傳空字串，若b或c小於0，則視為從後端開始。
+a.substring(b, c)：提取字串中第b個～第c-1個。 ※c>b則自動互換位置，若b或c小於0，則視為0。
+a.match(reg)：以正規式搜尋字串，並取得符合之字串。
+a.search(reg)：以正規式搜尋字串，傳回第一個符合字串的位置。
+a.startsWith(b,c)：搜尋字串從c開始是否以b開頭。 ※ES6
+a.endsWith(b,c)：搜尋字串從c開始是否以b結尾。 ※ES6
+a.includes(b,c)：搜尋字串從c開始是否包含b。 ※ES6
 
 
 陣列相關
 
-a.length：查詢a陣列長度。
-a.indexOf(b)：在a陣列中確認有無b字串。
-	有 → 回傳b字串的第一個字在a中的位置。
-	無 → 回傳負數。
-a.join('b')：在陣列a的每一個元素接上b字串(頭尾除外)，並轉成字串。
-a.map(b())：對陣列a安插函式，並對每個元素做計算後回傳陣列a。
-a.filter(b())：將陣列a中的true回傳，false過濾掉。
-a.slice(b, c)：提取陣列中第b個～第c-1個。
-a.splice(b, c, d)；在a陣列中的第b個位置開始，往後刪除c個元素（並包含b），再插入d並回傳。
-a.sort()：將陣列a內元素的第一個字（或數）做排序。
-a.reverse()：將陣列a內的元素位置反轉。
-a.push(b)：將b插入a陣列最後一項，並回傳陣列長度，因此a.push(b) = push後的a.length
-a.reduce(b(c, d), e)：將陣列中所有的值做相加（此指令會一直執行c += d ，故須輸入return c+d才會是陣列總和)，b為function名稱/c為accumulator/d為currentValue/e為初始值。
-a.forEach(b())：對陣列a每一個函式做計算後不回傳陣列a。
-a.fill()：將陣列所有元素填滿。
+    基本型：
+    a.length：查詢a陣列長度。
+    a.indexOf(b)：在a陣列中確認有無b字串。
+        有 → 回傳b字串的第一個字在a中的位置。
+        無 → 回傳負數。
+    a.lastIndexOf(b)：由後端開始搜尋在a陣列中確認有無b字串。
+    a.toString()：將陣列轉字串。
+    Array.isArray(a)：判斷a是否為array。
+    Array.of(b, c, d)：將b,c,d轉為陣列。 ※ES6
 
-*函式內return 負數表示程式不正常中止，return 0 表示程序正常中止，return 1 表示程式正常運作。
+    新增或刪除元素：
+    a.push(b)：將b插入a陣列最後一項，並回傳陣列長度，因此a.push(b) = push後的a.length
+    a.pop()：刪除陣列最後一個元素，並回傳陣列。
+        ※console.log(a.pop())會取得被刪除的元素。
+    a.shift()：刪除陣列第一個元素，並回傳陣列。
+        ※console.log(a.shift())會取得被刪除的元素。
+    a.unshift(b)：將b插入置陣列第一項，並回傳新的陣列。
+        ※console.log(a.unshift(b))會取得新的陣列長度。
+
+    排序：
+    a.sort()：將陣列a內元素的第一個字（或數）做排序。
+    a.reverse()：將陣列a內的元素位置反轉。
+
+    其他加工：
+    a.join('b')：在陣列a的每一個元素接上b字串(頭尾除外)，並轉成字串。
+    a.slice(b, c)：提取陣列中第b個～第c-1個。
+    a.splice(b, c, d)；在a陣列中的第b個位置開始，往後刪除c個元素（並包含b），再插入d並回傳。
+        ※console.log(a.splice(b, c, d))會取得被置換的元素。
+    a.fill('b', c, d))：從c位置到d-1位置的元素置換成b。
+    a.concat(b)：在a陣列後面合併b陣列。
+
+    回呼函式：
+    a.map(b())：對陣列a安插函式，並對每個元素做計算後回傳陣列a。
+    a.filter(b())：將陣列a中的true回傳，false過濾掉。
+    a.reduce(b(c, d), e)：將陣列中所有的值做相加（此指令會一直執行c += d ，故須輸入return c+d才會是陣列總和)，b為function名稱/c為accumulator/d為currentValue/e為初始值。
+    a.forEach(b())：對陣列a每一個函式做計算後不回傳陣列a。
+    a.some(b())：確認陣列中是否其中一個元素符合條件，有就回傳true，都沒有回傳false。
+    a.every(b())：確認陣列中是否所有元素均符合條件，都有就回傳true，其中一項沒有就回傳false。
+
+    *函式內return 負數表示程式不正常中止，return 0 表示程序正常中止，return 1 表示程式正常運作。
 
 
 其他

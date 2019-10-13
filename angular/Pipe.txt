@@ -1,0 +1,99 @@
+時間 {{ today | date:'yyyy/MM/dd HH:mm:ss' }}}}
+貨幣 {{ value | currency : currncyCode : display : digitsInfo : locale }}
+    ※currencyCode：幣別代號，例如USD(美金)。
+    ※display：前綴。
+        code：顯示幣別。
+        symbol(預設)：顯示幣別標誌，如$。
+        symbol-narrow：該壁別的其他幣別標誌。
+        String：自定義前綴。
+        Boolean：true for symbol and false for code
+    ※digitsInfo：數字表示長度，規則如{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}，例如'4.2-2'。
+        minIntegerDigits：整數最小顯示長度，預設值為1。
+        minFractionDigits：小數最小顯示長度。
+        maxFractionDigits：小數最大顯示長度。
+Json {{ value | json }}
+非同步 {{ obj | async }}
+    適用於Obervable or Promise，會回傳最新的資料。
+大寫 {{ value | uppercase }}
+小寫 {{ value | lowercase }}
+標題 {{ value | titlecase }}
+    會將英文字串每個單字字首變大寫，其他字母變小寫。
+小數點位數 {{ value | number : digitsInfo : locale }}
+    將數字變格式化字串，並取最接近值（如-2.5會變成-3)
+    ※digitsInfo：數字表示長度，規則如{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}，例如'4.2-2'。
+        minIntegerDigits：整數最小顯示長度，預設值為1。
+        minFractionDigits：小數最小顯示長度。
+        maxFractionDigits：小數最大顯示長度。
+百分比 {{ value | percent : digitsInfo : locale}}
+    ※digitsInfo：數字表示長度，規則如{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}，例如'4.2-2'。
+        minIntegerDigits：整數最小顯示長度，預設值為1。
+        minFractionDigits：小數最小顯示長度。
+        maxFractionDigits：小數最大顯示長度。
+分割取得 {{ value | slice : start : end }}
+    1.字串分割
+        str: string = 'abcdefgh';
+        {{ str | slice:-4:-2 }} => gh
+    2.陣列分割（配合*ngFor）
+        @Component({
+            selector: 'slice-list-pipe',
+            template: `<ul>
+                <li *ngFor="let i of collection | slice:1:3">{{i}}</li>
+            </ul>`
+        })
+        export class SlicePipeListComponent {
+            collection: string[] = ['a', 'b', 'c', 'd'];
+        }
+
+        =><li>b</li>
+          <li>c</li>
+多國語言 {{ value | i18nSelect : mapping}}
+    ※mapping：為一個物件，其內容可將值替換成其他值。
+    @Component(
+        {selector: 'i18n-select-pipe', template: `<div>{{gender | i18nSelect: inviteMap}} </div>`})
+    export class I18nSelectPipeComponent {
+        gender: string = 'male';
+        inviteMap: any = {'male': 'Invite him.', 'female': 'Invite her.', 'other': 'Invite them.'};
+    }
+
+多國語言 {{ number | i18nSelect : pluralMap ： locoal}}
+    ※pluralMap：為一個物件，其內容可將值替換成其他值。
+        @Component({
+            selector: 'i18n-plural-pipe',
+            template: `<div>{{ messages.length | i18nPlural: messageMapping }}</div>`
+        })
+        export class I18nPluralPipeComponent {
+            messages: any[] = ['Message 1'];
+            messageMapping:
+                {[k: string]: string} = {'=0': 'No messages.', '=1': 'One message.', 'other': '# messages.'};
+        }
+
+
+自定義pipe
+    範例：
+        import { Pipe, PipeTransform } from '@angular/core';
+
+        @Pipe({name: 'exponentialStrength'})
+        export class ExponentialStrengthPipe implements PipeTransform {
+            transform(value: number, exponent: string): number {
+                let exp = parseFloat(exponent);
+                return Math.pow(value, isNaN(exp) ? 1 : exp);
+            }
+        }
+
+        import { Component } from '@angular/core';
+        
+        @Component({
+        selector: 'app-power-boost-calculator',
+        template: `
+            <h2>Power Boost Calculator</h2>
+            <div>Normal power: <input [(ngModel)]="power"></div>
+            <div>Boost factor: <input [(ngModel)]="factor"></div>
+            <p>
+                Super Hero Power: {{power | exponentialStrength: factor}}
+            </p>
+            `
+        })
+        export class PowerBoostCalculatorComponent {
+            power = 5;
+            factor = 1;
+        }

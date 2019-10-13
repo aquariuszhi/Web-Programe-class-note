@@ -1,0 +1,25 @@
+ng new：新增專案
+    --prefix=name：更換前綴名。
+    --skip-tests：不加入測試檔。
+
+ng generate（或ng g）<schematic> <name>：新增檔案
+    常用schematic
+        class
+        component
+        directive
+        enum
+        guard
+        interface
+        module
+        pipe
+        service
+    ※ng g schematic --type name：會自動產生檔名schmatic.type.ts的檔案
+
+ng serve：自動打包和架設伺服器，並熱更新網頁。
+    --open：直接開啟網頁。
+    --port：更換port。
+    --proxy-config：處理cors問題。
+
+ng build：將檔案打包至dist資料夾內。
+    --prod：用production mode編譯和打包。
+    --source-map：打包出來的檔案含有source map檔案。

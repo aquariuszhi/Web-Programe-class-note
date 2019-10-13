@@ -3,7 +3,20 @@
 1. do {} while() ：先執行再判斷條件（可用continue安插在中間來根據條件直接跑到下一圈）。
 2. while {} ；先判斷條件再執行。
 3. for (初始值 ; 終止條件 ; 每一圈要做的事情){} ：
-EX. for (i = 0 ; i <= n ; i++){
-		console.log('ya')
-	}
-	*在同一行的不同指令用;隔開。
+	EX. for (i = 0 ; i <= n ; i++){
+			console.log('ya')
+		}
+		*在同一行的不同指令用;隔開。
+
+4. for...in：依物件標籤依序處理（不建議用於陣列）
+	EX. var data = {apple:150, orange:100, banana:120}
+		for (var key in data){
+			console.log(key + '=' + data[key])
+		}
+
+5. for...of：依序列舉陣列
+	EX. var data = ['apple', 'orange', 'banana']
+		Array.prototype.hoge = function(){}
+		for (var value of data){
+			console.log(value)
+		}
