@@ -1,4 +1,4 @@
-Git相關指令
+﻿Git相關指令
 
 git init：新建git資料夾（為初始化的狀態，屬性為隱藏）。
 git status：查看git狀態，untracked區塊為未加入版本控制，staged區塊為已加入版本控制，但未正式建立新版本。
@@ -11,6 +11,7 @@ git checkout：輸入版本號可以回到該版本狀態，再輸入git checkou
 git checkout .：可將刪除的檔案救回。
 git diff：可以顯示commit前更動的內容。
 git commit --amend：可修改commit。
+git cheery-pick commitID：可將某分支的某個commit合併進來。
 git rest HEAD^ --hard：將最新的commit消除。
 			   --soft：回到commit前的狀態，但新的修改仍然保留著（此為預設）。
 git checkout --檔名：將已更新commit的檔案回覆到修改前的狀態。
