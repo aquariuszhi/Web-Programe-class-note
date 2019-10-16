@@ -1,4 +1,4 @@
-Samba
+﻿Samba
 
 nmbd ：這個 daemon 是用來管理工作群組啦、NetBIOS name 啦等等的解析。主要利用 UDP 協定開啟 port 137, 138 來負責名稱解析的任務；
 
@@ -82,3 +82,4 @@ directory mask = 777
 http://linux.vbird.org/linux_server/0370samba.php
 https://noob.tw/samba/
 https://magiclen.org/ubuntu-server-samba/
+https://www.dennysu.com/wordpress/2014/08/30/samba-網路芳鄰伺服器雜記/
