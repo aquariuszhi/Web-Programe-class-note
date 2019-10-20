@@ -1,0 +1,10 @@
+1. 資料綁定
+	{{value}}：插值表達式，將要綁定的資料變數放入{{}}中，則Component的資料會單向流到DOM裡
+	
+	[property]="value"：屬性綁定，透過Html元素加上[propertyName]達成由Component至DOM的單向資料綁定
+
+	(event)="handler($enent)"：事件綁定，透過html事件將DOM資料流向Component
+
+	[(ngModel)]="property"：雙向綁定，透過Template-Driven Form達成雙向綁定，先由Component將值傳至DOM，接著若使用者修改了其值，則會即時將資料傳送回去Component。
+		※須在module引入FormModule才能使用雙向綁定。
+

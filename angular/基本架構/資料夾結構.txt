@@ -1,0 +1,25 @@
+1. 專案入口資料夾
+	angular.json：Angular CLI設定檔
+	dist/：放置打包檔案的資料夾
+	e2e/：E2E測試的程式碼擺放資料夾
+	tsconfig.json：TypeScript編譯設定檔
+	tslint.json：TSLint的設定檔
+
+2. src/
+	app/：整個網頁的應用程式放置資料夾
+	assets/：靜態資源放置處，如圖片
+	browserslist：Angular根據此檔案設定來加上CSS前綴
+	environments：環境變數設定檔
+	favicon.ico：瀏覽器用到的icon圖檔
+	index.html：入口網頁
+	karma.conf.js：Karma單元測試工具設定檔
+	main.ts：Angular CLI編譯與打包的入口程式檔
+	polyfills.ts：載入Angular之前預先載入的程式
+	styles.css：共用CSS設定檔
+	test.ts：測試用入口程式
+	tsconfig.app.json：TypeScript設定檔（有繼承tsconfig.json的設定)
+	tsconfig.spec.json：測試用的TypeScript設定檔
+	tslint.json：同外層tslint.json
+
+3. app/
+	conponent/：

@@ -1,0 +1,22 @@
+<h1>
+  <!-- {{ str }}為插值表達式，將要綁定的資料變數放入{{}}中 -->
+  Welcome to {{ title }}
+</h1>
+<div>
+  <!-- 同for-loop功用 -->
+  <ur *ngFor="let item of items">
+    <!-- Pipe -->
+    <li>{{ item.UpdateTime | date: 'yyyy-MM-dd HH:mm:ss' }}</li>
+  </ur>
+  <!-- 利用ngif判斷有資料就顯示 -->
+  <p *ngIf="getList().length"></p>
+</div>
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <!-- 雙向綁定需在module中引入FormModule，並且要有該屬性(ex. name="name"))才可以使用 -->
+  <p><input type="text" name = "name" [(ngModel)]="name"></p>
+  <p><button type="submit">新增姓名</button></p>
+  <input (keyup.enter)="addTodo($event.target)">
+  <p>姓名： {{ name }}</p>
+</form>
+<!-- 路由插座，將路由檔案插入至此 -->
+<router-outlet></router-outlet>

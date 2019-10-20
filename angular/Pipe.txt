@@ -1,4 +1,5 @@
-時間 {{ today | date:'yyyy/MM/dd HH:mm:ss' }}}}
+﻿時間 {{ today | date:'yyyy/MM/dd HH:mm:ss' }}}}
+
 貨幣 {{ value | currency : currncyCode : display : digitsInfo : locale }}
     ※currencyCode：幣別代號，例如USD(美金)。
     ※display：前綴。
@@ -11,24 +12,32 @@
         minIntegerDigits：整數最小顯示長度，預設值為1。
         minFractionDigits：小數最小顯示長度。
         maxFractionDigits：小數最大顯示長度。
+
 Json {{ value | json }}
+
 非同步 {{ obj | async }}
     適用於Obervable or Promise，會回傳最新的資料。
+
 大寫 {{ value | uppercase }}
+
 小寫 {{ value | lowercase }}
+
 標題 {{ value | titlecase }}
     會將英文字串每個單字字首變大寫，其他字母變小寫。
+
 小數點位數 {{ value | number : digitsInfo : locale }}
     將數字變格式化字串，並取最接近值（如-2.5會變成-3)
     ※digitsInfo：數字表示長度，規則如{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}，例如'4.2-2'。
         minIntegerDigits：整數最小顯示長度，預設值為1。
         minFractionDigits：小數最小顯示長度。
         maxFractionDigits：小數最大顯示長度。
+
 百分比 {{ value | percent : digitsInfo : locale}}
     ※digitsInfo：數字表示長度，規則如{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}，例如'4.2-2'。
         minIntegerDigits：整數最小顯示長度，預設值為1。
         minFractionDigits：小數最小顯示長度。
         maxFractionDigits：小數最大顯示長度。
+
 分割取得 {{ value | slice : start : end }}
     1.字串分割
         str: string = 'abcdefgh';
@@ -46,6 +55,7 @@ Json {{ value | json }}
 
         =><li>b</li>
           <li>c</li>
+
 多國語言 {{ value | i18nSelect : mapping}}
     ※mapping：為一個物件，其內容可將值替換成其他值。
     @Component(
