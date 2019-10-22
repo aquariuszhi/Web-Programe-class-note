@@ -7,6 +7,8 @@ git rm --cached 檔名：將檔案移出版本控制。
 git commit：進入vim編輯器來新增版本資訊，並將檔案正式加入版本控制，輸入git commit -m "版本訊息"，可直接commit，未輸入版本訊息則無法commit。
 git commit -am"版本訊息"：可一次將所有檔案add+checkout（新建的檔案例外）。
 git log：查看歷史訊息，git --online可顯示簡短訊息。
+　　--oneline：僅用一行顯示每次的 commit
+　　--after：指定顯示日期之後的 commit
 git checkout：輸入版本號可以回到該版本狀態，再輸入git checkout master就會回到最新版本。
 git checkout .：可將刪除的檔案救回。
 git diff：可以顯示commit前更動的內容。

@@ -1,6 +1,7 @@
 ﻿GitHub相關指令
 
-1.輸入git remote add origin 網址，再輸入git push -u origin master 即可上傳檔案。
+1.輸入git remote add {origine該遠端名稱} {網址}，再輸入git push -u {origin} master 即可上傳檔案。
+　　※可以儲存多個遠端名稱
 2.輸入git push origin master 即可更新檔案，新的branch建立後切換至新branch後，再輸入git push origin branch名稱即可更新。
 	※出現錯誤可以用git pull --rebase 將別人的更新不蓋檔下載下來，再重新上傳。
 3.輸入git pull origin master 即可下載檔案，產生conflict時手動排除並重新上傳。
